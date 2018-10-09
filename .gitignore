@@ -6,3 +6,4 @@
 # Eclipse Files #
 .project
 .classpath
+/bin/
