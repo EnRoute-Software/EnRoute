@@ -11,8 +11,7 @@ import enroute.processor.inventory.InventoryEntry;
 
 public class Main {
 	public static void main(String[] args) {
-		if (!loadLoggerConfiguration())
-			return;
+		loadLoggerConfiguration();
 
 		final Logger logger = Logger.getLogger(Main.class.getName());
 		final Properties config = getConfiguration();
@@ -24,17 +23,14 @@ public class Main {
 		final Collection<InventoryEntry> openEntries = inventory.getOpenEntries();
 	}
 
-	private static boolean loadLoggerConfiguration() {
+	private static void loadLoggerConfiguration() {
 		final InputStream propStream = Main.class.getClassLoader().getResourceAsStream("logging.properties");
 
 		try {
 			LogManager.getLogManager().readConfiguration(propStream);
 		} catch (Throwable t) {
-			t.printStackTrace();
-			return false;
+			throw new RuntimeException(t);
 		}
-
-		return true;
 	}
 
 	private static Properties getConfiguration() {
