@@ -10,10 +10,13 @@ import enroute.processor.inventory.InventoryDAO;
 import enroute.processor.inventory.InventoryEntry;
 
 public class Main {
-	public static void main(String[] args) {
+	static {
 		loadLoggerConfiguration();
-
-		final Logger logger = Logger.getLogger(Main.class.getName());
+	}
+	
+	private static final Logger logger = Logger.getLogger(Main.class.getName());
+	
+	public static void main(String[] args) {
 		final Properties config = getConfiguration();
 
 		logger.info("Starting EnRoute Inventory Processor...");
