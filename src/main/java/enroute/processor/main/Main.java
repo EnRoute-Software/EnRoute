@@ -2,6 +2,7 @@ package enroute.processor.main;
 
 import java.io.InputStream;
 import java.util.Collection;
+import java.util.List;
 import java.util.Properties;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
@@ -23,7 +24,7 @@ public class Main {
 
 		logger.info("Retrieving open inventory");
 		final InventoryDAO inventory = new InventoryDAO(config.getProperty("inventory_db_url"));
-		final Collection<InventoryEntry> openEntries = inventory.getOpenEntries();
+		final List<InventoryEntry> openEntries = inventory.getOpenEntries();
 	}
 
 	private static void loadLoggerConfiguration() {

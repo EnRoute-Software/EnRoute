@@ -1,19 +1,21 @@
 package enroute.processor.inventory;
 
+import java.util.Date;
+
 public class InventoryEntry {
 	private final long id;
-	private final long createDate;
-	private final long customerId;
-	private final int departureCode;
-	private final long departureDate;
-	private final int destinationCode;
+	private final Date createDate;
+	private final int customerId;
+	private final String departureCode;
+	private final Date departureDate;
+	private final String destinationCode;
 	private final boolean isRoundTrip;
-	private final long roundTripDepartureDate;
-	private final short ticketCount;
+	private final Date roundTripDepartureDate;
+	private final int ticketCount;
 	private final int ticketClassCode;
 
-	public InventoryEntry(long id, long createDate, long customerId, int departureCode, long departureDate,
-			int destinationCode, boolean isRoundTrip, long roundTripDepartureDate, short ticketCount,
+	public InventoryEntry(long id, Date createDate, int customerId, String departureCode, Date departureDate,
+			String destinationCode, boolean isRoundTrip, Date roundTripDepartureDate, int ticketCount,
 			int ticketClassCode) {
 		this.id = id;
 		this.createDate = createDate;
@@ -31,23 +33,23 @@ public class InventoryEntry {
 		return id;
 	}
 
-	public long getCreateDate() {
+	public Date getCreateDate() {
 		return createDate;
 	}
 
-	public long getCustomerId() {
+	public int getCustomerId() {
 		return customerId;
 	}
 
-	public int getDepartureCode() {
+	public String getDepartureCode() {
 		return departureCode;
 	}
 
-	public long getDepartureDate() {
+	public Date getDepartureDate() {
 		return departureDate;
 	}
 
-	public int getDestinationCode() {
+	public String getDestinationCode() {
 		return destinationCode;
 	}
 
@@ -55,11 +57,11 @@ public class InventoryEntry {
 		return isRoundTrip;
 	}
 
-	public long getRoundTripDepartureDate() {
+	public Date getRoundTripDepartureDate() {
 		return roundTripDepartureDate;
 	}
 
-	public short getTicketCount() {
+	public int getTicketCount() {
 		return ticketCount;
 	}
 
