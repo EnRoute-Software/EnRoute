@@ -11,9 +11,9 @@ import enroute.processor.transform.ITransformer;
 
 public class InventoryDAO {
 	private static final Logger logger = Logger.getLogger(InventoryDAO.class.getName());
-	
+
 	private static final String openInventoryQuery = "SELECT * FROM enroute.inventory WHERE statusCd=0";
-	
+
 	private final Connection connection;
 	private final ITransformer<ResultSet, List<InventoryEntry>> deserializer;
 
@@ -33,6 +33,6 @@ public class InventoryDAO {
 		} catch (final SQLException e) {
 			throw new RuntimeException(e);
 		}
-		
+
 	}
 }

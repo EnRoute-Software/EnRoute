@@ -1,7 +1,6 @@
 package enroute.processor.main;
 
 import java.io.InputStream;
-import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
 import java.util.logging.LogManager;
@@ -14,9 +13,9 @@ public class Main {
 	static {
 		loadLoggerConfiguration();
 	}
-	
+
 	private static final Logger logger = Logger.getLogger(Main.class.getName());
-	
+
 	public static void main(String[] args) {
 		final Properties config = getConfiguration();
 
