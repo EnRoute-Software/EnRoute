@@ -68,4 +68,13 @@ public class InventoryEntry {
 	public int getTicketClassCode() {
 		return ticketClassCode;
 	}
+
+	@Override
+	public String toString() {
+		return "InventoryEntry [id=" + id + ", createDate=" + createDate + ", customerId=" + customerId
+				+ ", departureCode=" + departureCode + ", departureDate=" + departureDate + ", destinationCode="
+				+ destinationCode + ", isRoundTrip=" + isRoundTrip + ", roundTripDepartureDate="
+				+ roundTripDepartureDate + ", ticketCount=" + ticketCount + ", ticketClassCode=" + ticketClassCode
+				+ "]";
+	}
 }

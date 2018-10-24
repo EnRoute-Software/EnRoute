@@ -1,6 +1,7 @@
 package enroute.processor.main;
 
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import java.util.logging.LogManager;
@@ -20,10 +21,13 @@ public class Main {
 		final Properties config = getConfiguration();
 
 		logger.info("Starting EnRoute Inventory Processor...");
-
 		logger.info("Retrieving open inventory");
+
 		final InventoryDAO inventory = new InventoryDAO(config.getProperty("inventory_db_url"));
 		final List<InventoryEntry> openEntries = inventory.getOpenEntries();
+
+		logger.info("The following entries were loaded: ");
+		logger.info(Arrays.toString(openEntries.toArray()));
 	}
 
 	private static void loadLoggerConfiguration() {
